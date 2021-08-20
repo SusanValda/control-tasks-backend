@@ -21,7 +21,7 @@ app.post("/tasks", jsonParser, (req, res, next) => {
     console.log(req.body)
     req.body.id = surrogateKey++;
     req.body.status = "pending";
-    req.body.id = tasks.length + 1;
+    //req.body.id = tasks.length + 1;
     tasks.push(req.body);
     res.send("Task has been added.");
 });
