@@ -31,8 +31,6 @@ app.delete("/tasks/:taskId", jsonParser, (req, res, next) => {
     var id = parseInt(req.params.taskId);
     var i = tasks.findIndex(t => t.id === id);
 
-    console.log(i);
-
     if (i >= 0) {
         tasks.splice(i, 1);
         res.send("Task has been deleted.");
@@ -46,7 +44,6 @@ app.put('/tasks/:taskId', jsonParser, (req, res, next) => {
     var id = parseInt(req.params.taskId);
     var i = tasks.findIndex(t => t.id === id)
     if (status) {
-        console.log(status);
         if (i >= 0) {
             tasks[i].status = status;
             res.send("Task status -> " + status);
